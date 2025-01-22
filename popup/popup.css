@@ -2,6 +2,19 @@
   --primaty-color: hsl(180, 68%, 32%);
 }
 
+.button {
+  width: fit-content;
+  padding: 0.5rem 2rem;
+  align-self: center;
+  background-color: var(--primaty-color);
+  color: hsl(0, 0%, 98%);
+  font-weight: 700;
+  border: 1px solid var(--primaty-color);
+  border-radius: 4px;
+  box-shadow: 0 4px 5px 2px hsla(0, 0%, 13%, 0.133);
+  cursor: pointer;
+}
+
 main {
   width: 400px;
 
@@ -51,17 +64,6 @@ main {
   }
 
   #addTask {
-    width: fit-content;
-    padding: 0.5rem 2rem;
-    align-self: center;
-    background-color: var(--primaty-color);
-    color: hsl(0, 0%, 98%);
-    font-weight: 700;
-    border: 1px solid var(--primaty-color);
-    border-radius: 4px;
-    box-shadow: 0 4px 5px 2px hsla(0, 0%, 13%, 0.133);
-    cursor: pointer;
-
     &:hover {
       border: 1px solid color-mix(in srgb, hsl(0, 0%, 100%) 30%, var(--primaty-color));
       box-shadow: none;
@@ -77,9 +79,36 @@ main {
     font-size: 16px;
     font-weight: 500;
 
+    padding-inline: 1rem;
+
     li {
       display: flex;
       justify-content: space-between;
+
+      .text{
+
+        &.done {
+          text-decoration: line-through;
+          color: hsl(0, 58%, 37%);
+        }
+      }
+      
+      .actions{
+        display: flex;
+        gap: 0.2rem;
+
+        .remove-button{
+          background-color: hsl(0, 58%, 37%);
+          border: 1px solid hsl(0, 58%, 37%);
+          padding: 0.2rem 0.3rem;
+        }
+
+        .done-button{
+          background-color: hsl(71, 70%, 27%);
+          border: 1px solid hsl(71, 70%, 27%);
+          padding: 0.2rem 0.3rem;
+        }
+      }
     }
   }
 }

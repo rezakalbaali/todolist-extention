@@ -19,9 +19,13 @@ function showTasksNotification(url) {
   const domain = new URL(url).hostname;
   chrome.storage.local.get([domain], (result) => {
     const tasks = result[domain] || [];
+    const message = tasks
+      .filter((task) => !task.isDone)
+      .map(({ task }) => task)
+      .join("\n");
+      
 
-    if (tasks.length) {
-      const message = tasks.join("\n");
+    if (message) {
       chrome.notifications.create({
         type: "basic",
         iconUrl: "icon.png",
