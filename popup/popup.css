@@ -13,6 +13,12 @@
   border-radius: 4px;
   box-shadow: 0 4px 5px 2px hsla(0, 0%, 13%, 0.133);
   cursor: pointer;
+
+  transition: all 20ms ease-in-out;
+
+  &:active{
+    scale: 1.05;
+  }
 }
 
 main {
